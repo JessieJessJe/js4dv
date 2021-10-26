@@ -19,6 +19,8 @@ repeatContent = new Array(total).fill(message);
 // repeatContent = message;
 
 var back = d3.select("svg#back-content")
+                .attr("width", width)
+                .attr("height", height)
                 .selectAll("text")
                 .data(repeatContent);;
 
@@ -53,7 +55,7 @@ if (!rotate){
         .text(function(d){ return d})
         .attr("class","text-back") 
         .attr("transform", function(d,i){
-            return  `translate( ${width/myRandom()} ${i*fontSize})`
+            return  `translate( ${width/myRandom()} ${(i+1)*fontSize})`
         })
         .attr("x", 0)
         // .attr("y", height - measure_text.height * scale - margin.top - margin.bottom)
