@@ -35,17 +35,20 @@
     // if (rotate){
     //     svg.attr("transform", "rotate(-90)")
 
-    //     yMax = num_rects * rectWidth;
-    //     yScale = d3.scaleLinear()
+    //     xMax = num_rects * rectWidth;
+    //     xScale = d3.scaleLinear()
     //         .domain([0, xMax])
-    //         .range([margin.left, width - margin.right]);
+    //         .range([margin.left, width - margin.right])
+    //         .attr("transform", "rotate(-90)");
             
     //     xMax = d3.max(data, function(d){return d.h});
     //     xScale = d3.scaleLinear()
     //         .domain([0, yMax])
-    //         .range([height - margin.bottom, margin.top]);
+    //         .range([height - margin.bottom, margin.top])
+    //         .attr("transform", "rotate(-90)");
 
     // }
+
     //calculating stages, maximum = 5
     let stages = new Array(5).fill(0);
 
@@ -62,7 +65,6 @@
             if (d.stage == s){
                 count +=1; 
                 let gradient = Math.trunc( 8 - (count/total) * 8 ) + 1
-                console.log(gradient)
 
                     // bars 
                     var rect = svg
@@ -113,7 +115,7 @@
                 .attr("transform", `translate(${xScale(i * rectWidth) + rectWidth/3} ${height - margin.bottom - secondaryTextPadding}) rotate(90)`) 
                 .attr("text-anchor", "end")             
                 .style("font-weight", "normal")
-                .style("font-size", "1rem")
+                .style("font-size", rectWidth/2 + "px")
                 .style("fill", "black")
                 .text(d.text);
                 
@@ -127,8 +129,8 @@
     	        .attr('y', '0')               
                 .attr("transform", `translate(${xScale(i * rectWidth) + rectWidth/3} ${margin.top + secondaryTextPadding}) rotate(90)`)              
                 .style("font-weight", "normal")
-                .style("font-size", "1rem")
-                .style("fill", rectWidth/2 + "px")
+                .style("font-size", rectWidth/2 + "px")
+                .style("fill", "black")
                 .text(d.t);
 
         }

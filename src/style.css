@@ -38,11 +38,25 @@ body{
 
 #landing-page{
     display: flex;
-    margin: 20px;
+  
+    overflow: scroll;
 }
 
 #landing-page-left{
+    background-color: #efefef;
     width: 20vw;
-    margin: 20px;
+    height: 100vh;
+    padding: 20px 40px;
+   
+}
+
+#landing-page-right{
+   
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 80vw;
+    justify-content: center;
+    align-items: center;
 
 }
