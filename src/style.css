@@ -1,0 +1,32 @@
+@font-face {
+    font-family: ABCLaicaA-Medium-Trial;
+    src: url("ABCLaicaA-Medium-Trial.otf");
+         /* local("HelveticaNeue-Bold"),
+         url(MgOpenModernaBold.ttf); */
+    /* font-weight: bold; */
+  }
+@font-face {
+    font-family: ABCLaicaA-Regular-Trial;
+    src: url("ABCLaicaA-Regular-Trial.otf");
+  }
+@font-face {
+    font-family: ABCLaicaA-RegularItalic-Trial;
+    src: url("ABCLaicaA-RegularItalic-Trial.otf");
+  }
+
+body{
+    font-family: 'ABCLaicaA-Regular-Trial', sans-serif;
+     margin: 0; position: fixed; top: 0; right: 0; bottom: 0; left: 0; 
+  }
+
+.text-title{
+    font-family: 'ABCLaicaA-Medium-Trial', sans-serif; 
+}
+
+.text-farm{
+    font-family: 'ABCLaicaA-RegularItalic-Trial', sans-serif; 
+}
+
+#front{
+    border: 1px solid black;
+}

@@ -10,22 +10,86 @@
 
 <body>
   <svg></svg>
-  <script>
+  <svg height="10" width="10" xmlns="http://www.w3.org/2000/svg" version="1.1"> 
+    <defs> 
+        <!-- circlespatterm -->
+        <pattern id="circles-1" patternUnits="userSpaceOnUse" width="10" height="10"> <image xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMCcgaGVpZ2h0PScxMCc+CiAgPHJlY3Qgd2lkdGg9JzEwJyBoZWlnaHQ9JzEwJyBmaWxsPSJ3aGl0ZSIgLz4KICA8Y2lyY2xlIGN4PSIxIiBjeT0iMSIgcj0iMSIgZmlsbD0iYmxhY2siLz4KPC9zdmc+" x="0" y="0" width="10" height="10"> </image> </pattern> 
+        <pattern id="circles-2" patternUnits="userSpaceOnUse" width="10" height="10"> <image xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMCcgaGVpZ2h0PScxMCc+CiAgPHJlY3Qgd2lkdGg9JzEwJyBoZWlnaHQ9JzEwJyBmaWxsPSd3aGl0ZScgLz4KICA8Y2lyY2xlIGN4PScxLjUnIGN5PScxLjUnIHI9JzEuNScgZmlsbD0nYmxhY2snLz4KPC9zdmc+Cg==" x="0" y="0" width="10" height="10"> </image> </pattern> 
+        <pattern id="circles-3" patternUnits="userSpaceOnUse" width="10" height="10"> <image xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMCcgaGVpZ2h0PScxMCc+CiAgPHJlY3Qgd2lkdGg9JzEwJyBoZWlnaHQ9JzEwJyBmaWxsPSd3aGl0ZScgLz4KICA8Y2lyY2xlIGN4PScyJyBjeT0nMicgcj0nMicgZmlsbD0nYmxhY2snLz4KPC9zdmc+" x="0" y="0" width="10" height="10"> </image> </pattern> 
+        <pattern id="circles-4" patternUnits="userSpaceOnUse" width="10" height="10"> <image xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMCcgaGVpZ2h0PScxMCc+CiAgPHJlY3Qgd2lkdGg9JzEwJyBoZWlnaHQ9JzEwJyBmaWxsPSd3aGl0ZScgLz4KICA8Y2lyY2xlIGN4PScyLjUnIGN5PScyLjUnIHI9JzIuNScgZmlsbD0nYmxhY2snLz4KPC9zdmc+" x="0" y="0" width="10" height="10"> </image> </pattern>
+        <pattern id="circles-5" patternUnits="userSpaceOnUse" width="10" height="10"> <image xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMCcgaGVpZ2h0PScxMCc+CiAgPHJlY3Qgd2lkdGg9JzEwJyBoZWlnaHQ9JzEwJyBmaWxsPSd3aGl0ZScgLz4KICA8Y2lyY2xlIGN4PSczJyBjeT0nMycgcj0nMycgZmlsbD0nYmxhY2snLz4KPC9zdmc+Cg==" x="0" y="0" width="10" height="10"> </image> </pattern>
+        <pattern id="circles-6" patternUnits="userSpaceOnUse" width="10" height="10"> <image xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMCcgaGVpZ2h0PScxMCc+CiAgPHJlY3Qgd2lkdGg9JzEwJyBoZWlnaHQ9JzEwJyBmaWxsPSd3aGl0ZScgLz4KICA8Y2lyY2xlIGN4PSczLjUnIGN5PSczLjUnIHI9JzMuNScgZmlsbD0nYmxhY2snLz4KPC9zdmc+Cg==" x="0" y="0" width="10" height="10"> </image> </pattern>
+        <pattern id="circles-7" patternUnits="userSpaceOnUse" width="10" height="10"> <image xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMCcgaGVpZ2h0PScxMCc+CiAgPHJlY3Qgd2lkdGg9JzEwJyBoZWlnaHQ9JzEwJyBmaWxsPSd3aGl0ZScgLz4KICA8Y2lyY2xlIGN4PSc0JyBjeT0nNCcgcj0nNCcgZmlsbD0nYmxhY2snLz4KPC9zdmc+" x="0" y="0" width="10" height="10"> </image> </pattern>
+        <pattern id="circles-8" patternUnits="userSpaceOnUse" width="10" height="10"> <image xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMCcgaGVpZ2h0PScxMCc+CiAgPHJlY3Qgd2lkdGg9JzEwJyBoZWlnaHQ9JzEwJyBmaWxsPSd3aGl0ZScgLz4KICA8Y2lyY2xlIGN4PSc0LjUnIGN5PSc0LjUnIHI9JzQuNScgZmlsbD0nYmxhY2snLz4KPC9zdmc+" x="0" y="0" width="10" height="10"> </image> </pattern>
+        <pattern id="circles-9" patternUnits="userSpaceOnUse" width="10" height="10"> <image xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMCcgaGVpZ2h0PScxMCc+CiAgPHJlY3Qgd2lkdGg9JzEwJyBoZWlnaHQ9JzEwJyBmaWxsPSd3aGl0ZScgLz4KICA8Y2lyY2xlIGN4PSc1JyBjeT0nNScgcj0nNScgZmlsbD0nYmxhY2snLz4KPC9zdmc+" x="0" y="0" width="10" height="10"> </image> </pattern>
+        <mask id="circles-1-mask" > <rect x="0" y="0" width="100%" height="100%" fill="url(#circles-1)" /></mask>
+        <mask id="circles-2-mask" ><rect x="0" y="0" width="100%" height="100%" fill="url(#circles-2)" /></mask>
+        <mask id="circles-3-mask" ><rect x="0" y="0" width="100%" height="100%" fill="url(#circles-3)" /></mask>
+        <mask id="circles-4-mask" ><rect x="0" y="0" width="100%" height="100%" fill="url(#circles-4)" /></mask>
+        <mask id="circles-5-mask" ><rect x="0" y="0" width="100%" height="100%" fill="url(#circles-5)" /></mask>
+        <mask id="circles-6-mask" ><rect x="0" y="0" width="100%" height="100%" fill="url(#circles-6)" /></mask>
+        <mask id="circles-7-mask" ><rect x="0" y="0" width="100%" height="100%" fill="url(#circles-7)" /></mask>
+        <mask id="circles-8-mask" ><rect x="0" y="0" width="100%" height="100%" fill="url(#circles-8)" /></mask>
+        <mask id="circles-9-mask" ><rect x="0" y="0" width="100%" height="100%" fill="url(#circles-9)" /></mask>
+       
+
+    <!-- stripe patterm -->
+    <pattern id="pattern-stripe" 
+        width="4" height="4" 
+        patternUnits="userSpaceOnUse"
+        patternTransform="rotate(45)">
+        <rect width="2" height="4" transform="translate(0,0)" fill="white"></rect>
+      </pattern>
+      <mask id="mask-stripe">
+        <rect x="0" y="0" width="100%" height="100%" fill="url(#pattern-stripe)" />
+      </mask> 
+  </defs> 
+  </svg>
+  
+<script>
+
+      
     // options
     var margin = {"top": 20, "right": 10, "bottom": 20, "left": 30 }
     var width = 500;
     var height = 500;
-    var rectWidth = 100;
+
+    var secondaryTextPadding = 10;
+    
     
     // data
-    var data = [[50, "red"], [100, "teal"], [125, "yellow"], [75, "purple"], [25, "green"]];
+    var data = [{"h":100, "t":"2021", "text":"", "color":"none", "stage":0}, 
+                {"h":100, "t":"", "text":"", "color":"none", "stage":0}, 
+                {"h":100, "t":"", "text":"", "color":"none", "stage":0}, 
+                {"h":100, "t":"", "text":"","color":"none", "stage":0}, 
+                {"h":100, "t":"Apr.", "text":"Seed", "color":"green", "stage":1}, 
+                {"h":100, "t":"", "text":"", "color":"green", "stage":1},
+                {"h":100, "t":"", "text":"", "color":"green", "stage":1},
+                {"h":100, "t":"", "text":"", "color":"green", "stage":1},
+                {"h":100, "t":"", "text":"", "color":"green", "stage":1},
+                {"h":100, "t":"Set.", "text":"harvest", "color":"green", "stage":1},
+                {"h":100, "t":"", "text":"", "color":"none", "stage":0},
+                {"h":100, "t":"", "text":"", "color":"none", "stage":0},
+                {"h":100, "t":"", "text":"", "color":"none", "stage":0}, 
+                {"h":100, "t":"2022", "text":"", "color":"none", "stage":0}];
+   
+
+    var num_rects = data.length;
+    var rectWidth = (width- margin.left - margin.right) / num_rects;
+
+
+    
     
     // scales
-    var xMax = 5 * rectWidth;
+    var xMax = num_rects * rectWidth;
     var xScale = d3.scaleLinear()
     	.domain([0, xMax])
     	.range([margin.left, width - margin.right]);
-    var yMax = d3.max(data, function(d){return d[0]});
+
+       
+
+    var yMax = d3.max(data, function(d){return d.h});
+
     var yScale = d3.scaleLinear()
     	.domain([0, yMax])
     	.range([height - margin.bottom, margin.top]);
@@ -33,35 +97,135 @@
     // svg element
     var svg = d3.select('svg');
 		
-    // bars 
-    var rect = svg.selectAll('rect')
-    	.data(data)
-    	.enter().append('rect')
-    	.attr('x', function(d, i){ 
-        return xScale(i * rectWidth)})
-    	.attr('y', function(d){
-        return yScale(d[0])})
-    	.attr('width', xScale(rectWidth) - margin.left)
-    	.attr('height', function(d){
-        return height - margin.bottom - yScale(d[0])})
-			.attr('fill', function(d){
-        return d[1]})
-    	.attr('margin', 0);
+    // // bars 
+    // var rect = svg.selectAll('rect')
+    // 	.data(data)
+    // 	.enter().append('rect')
+
+    // 	.attr('x', function(d, i){ 
+    //         return xScale(i * rectWidth)})
+
+    // 	.attr('y', function(d){
+    //         return yScale(d.h)})
+
+    // 	.attr('width', xScale(rectWidth) - margin.left)
+    // 	.attr('height', function(d){
+    //         return height - margin.bottom - yScale(d.h)})
+	// 	.attr('mask', function(d,i){
+    //         return `url(#circles-${i}-mask)`
+    //         })
+    //     .attr('fill', function(d){
+    //     return d.color
+    //     })
+    // 	.attr('margin', 0);
+
+
+    //calculating stages, maximum = 5
+    let stages = new Array(5).fill(0);
+
+    data.forEach(function(d){ 
+        stages[d.stage] += 1})
+    
+    //painting bars
+    for (let s in stages){
+        let total = stages[s]
+        
+        let count = 0;
+        data.forEach(function(d,i){
+
+            if (d.stage == s){
+                count +=1; 
+                let gradient = Math.trunc( 8 - (count/total) * 8 ) + 1
+                console.log(gradient)
+
+                    // bars 
+                    var rect = svg
+                                .append('rect')
+
+                                .attr('x', xScale(i * rectWidth))
+
+                                .attr('y', yScale(d.h))
+
+                                .attr('width', xScale(rectWidth) - margin.left)
+                                .attr('height', height - margin.bottom - yScale(d.h))
+                                .attr('mask', `url(#circles-${gradient}-mask)`)
+                                .attr('fill', d.color)
+                                .attr('margin', 0);
+
+            
+                           
+            }
+
+        }
+        )    
+    }
     
     // axes
-    var xAxis = d3.axisBottom()
+    function setTickValue(){
+        let l = []
+        data.forEach( 
+            function(d,i){ if (i !== 0) {l.push(i * rectWidth)}
+        })
+        return l
+    }
+
+    var xAxis = d3.axisTop()
+        .tickValues(setTickValue() )
     	.scale(xScale)
-    	.tickFormat(d3.format('d'));
-    var yAxis = d3.axisLeft()
-    	.scale(yScale)
-    	.tickFormat(d3.format('d'));
+    	.tickFormat("")
+        .tickSize(height - margin.top - margin.bottom);
+
     
     svg.append('g')
       	.attr('transform', 'translate(' + [0, height - margin.bottom] + ')')
       	.call(xAxis);
-      svg.append('g')
-      	.attr('transform', 'translate(' + [margin.left, 0] + ')')
-      	.call(yAxis);
+
+    //remove the bounding box of axis
+    svg.select(".domain").remove()
+            // .attr("stroke","#E04836")
+            // .attr("stroke-width","6")
+            // .attr("opacity",".6");
+
+    //adding secondary text
+    data.forEach((d,i)=>{
+
+        if (d.text !== ""){
+
+            var text = svg
+                .append("text")
+                .attr('class','text-my')
+                .attr('x', '0')
+    	        .attr('y', '0')               
+                .attr("transform", `translate(${xScale(i * rectWidth) + rectWidth/3} ${height - margin.bottom - secondaryTextPadding}) rotate(90)`) 
+                .attr("text-anchor", "end")             
+                .style("font-weight", "normal")
+                .style("font-size", "1rem")
+                .style("fill", "black")
+                .text(d.text);
+                
+        }
+
+        if (d.t !== ""){
+        
+            var txt = svg
+                // .select("#_" + d.text)
+                .append("text")
+                .attr('x', '0')
+    	        .attr('y', '0')               
+                .attr("transform", `translate(${xScale(i * rectWidth) + rectWidth/3} ${margin.top + secondaryTextPadding}) rotate(90)`)              
+                .style("font-weight", "normal")
+                .style("font-size", "1rem")
+                .style("fill", "black")
+                .text(d.t);
+
+        }
+
+    })
+
+    function rightAlign(text){
+        console.log(text, text.length);
+        return text.length * 1
+    }
     
   </script>
 </body>
