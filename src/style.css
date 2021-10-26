@@ -22,6 +22,9 @@ body{
 .text-title{
     font-family: 'ABCLaicaA-Medium-Trial', sans-serif; 
 }
+.text-title-measure{
+    font-family: 'ABCLaicaA-Medium-Trial', sans-serif; 
+}
 
 .text-farm{
     font-family: 'ABCLaicaA-RegularItalic-Trial', sans-serif; 
@@ -29,4 +32,17 @@ body{
 
 #front{
     border: 1px solid black;
+    display: flex;
+    /* flex-direction: column; */
+}
+
+#landing-page{
+    display: flex;
+    margin: 20px;
+}
+
+#landing-page-left{
+    width: 20vw;
+    margin: 20px;
+
 }

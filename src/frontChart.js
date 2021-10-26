@@ -1,45 +1,23 @@
-   
+   function drawFrontChart(data,width,height, rotate = false){
+
+    var ratio = width / 500;
+
     // options
-    var margin = {"top": 20, "right": 10, "bottom": 20, "left": 30 }
-    var width = 800;
-    var height = 500;
+    var margin = {"top": 20 * ratio, "right": 10 * ratio, "bottom": 20 * ratio, "left": 30 * ratio }
 
     var secondaryTextPadding = 10;
-    
-    
-    // data
-    var data = [{"h":100, "t":"2021", "text":"", "color":"none", "stage":0}, 
-                {"h":100, "t":"", "text":"", "color":"none", "stage":0}, 
-                {"h":100, "t":"", "text":"", "color":"none", "stage":0}, 
-                {"h":100, "t":"", "text":"","color":"none", "stage":0}, 
-                {"h":100, "t":"Apr.", "text":"Seed", "color":"green", "stage":1}, 
-                {"h":100, "t":"", "text":"", "color":"green", "stage":1},
-                {"h":100, "t":"", "text":"", "color":"green", "stage":1},
-                {"h":100, "t":"", "text":"", "color":"green", "stage":1},
-                {"h":100, "t":"", "text":"", "color":"green", "stage":1},
-                {"h":100, "t":"Set.", "text":"harvest", "color":"green", "stage":1},
-                {"h":100, "t":"", "text":"", "color":"none", "stage":0},
-                {"h":100, "t":"", "text":"", "color":"none", "stage":0},
-                {"h":100, "t":"", "text":"", "color":"none", "stage":0}, 
-                {"h":100, "t":"2022", "text":"", "color":"none", "stage":0}];
    
 
     var num_rects = data.length;
     var rectWidth = (width- margin.left - margin.right) / num_rects;
 
-
-    
-    
     // scales
     var xMax = num_rects * rectWidth;
     var xScale = d3.scaleLinear()
     	.domain([0, xMax])
     	.range([margin.left, width - margin.right]);
 
-       
-
     var yMax = d3.max(data, function(d){return d.h});
-
     var yScale = d3.scaleLinear()
     	.domain([0, yMax])
     	.range([height - margin.bottom, margin.top]);
@@ -47,11 +25,27 @@
     // svg element
     var svg = d3.select('#front-chart');
 	
-    svg	
-    .attr("width", width)
-	.attr("height", height);
+        svg.selectAll("*").remove();
+
+        svg	
+        .attr("width", width)
+        .attr("height", height);
 
 
+    // if (rotate){
+    //     svg.attr("transform", "rotate(-90)")
+
+    //     yMax = num_rects * rectWidth;
+    //     yScale = d3.scaleLinear()
+    //         .domain([0, xMax])
+    //         .range([margin.left, width - margin.right]);
+            
+    //     xMax = d3.max(data, function(d){return d.h});
+    //     xScale = d3.scaleLinear()
+    //         .domain([0, yMax])
+    //         .range([height - margin.bottom, margin.top]);
+
+    // }
     //calculating stages, maximum = 5
     let stages = new Array(5).fill(0);
 
@@ -80,9 +74,7 @@
                                 .attr('mask', `url(#circles-${gradient}-mask)`)
                                 .attr('fill', d.color)
                                 .attr('margin', 0);
-
-            
-                           
+                 
             }
 
         }
@@ -113,7 +105,7 @@
 
         if (d.text !== ""){
 
-            var text = svg
+           svg
                 .append("text")
                 .attr('class','text-my')
                 .attr('x', '0')
@@ -129,15 +121,14 @@
 
         if (d.t !== ""){
         
-            var txt = svg
-                // .select("#_" + d.text)
+            svg
                 .append("text")
                 .attr('x', '0')
     	        .attr('y', '0')               
                 .attr("transform", `translate(${xScale(i * rectWidth) + rectWidth/3} ${margin.top + secondaryTextPadding}) rotate(90)`)              
                 .style("font-weight", "normal")
                 .style("font-size", "1rem")
-                .style("fill", "black")
+                .style("fill", rectWidth/2 + "px")
                 .text(d.t);
 
         }
@@ -156,4 +147,7 @@ function setTickValue(){
         function(d,i){ if (i !== 0) {l.push(i * rectWidth)}
     })
     return l
+}
+
+
 }
