@@ -6,7 +6,10 @@ var rotate = false;
 var width = 1600;
 var height = 500;
 
-var data, data_text;
+var width_back = 1600;
+var height_back = 500;
+
+var data, data_text, recipient="People";
 
 function initial(){
 
@@ -37,6 +40,8 @@ function initial(){
 
     drawFrontTitle(data_text, width, height)
     drawFrontChart(data, width, height, rotate);
+
+    drawBack(recipient, width_back, height_back)
 }
 
 
@@ -98,10 +103,18 @@ const handler = (event) => {
         "farm": result["farmName"],
     }
 
+    if (result["recipientName"] != ""){
+        recipient = result["recipientName"]
+    } else {
+        recipient = "People"
+    }
+    
+
    getVizData(time_process);
    getWH(card_width,card_height)
    drawFrontChart(data, width, height, rotate);
-   drawFrontTitle(data_text, width, height)
+   drawFrontTitle(data_text, width, height);
+   drawBack(recipient, width, height, rotate)
 
 }
 }
@@ -208,32 +221,85 @@ function getWH(w,h){
 let height_sum = FrameHeight;
 let width_sum = FrameWidth;
 
+let height_try, width_try = 0;
+
     //determine layout
     if (w/h > 1.5){
         
-        //horizontal
+        // title&chart horizontally stacked
         document.getElementById("front").style.flexDirection = "row";
-        height_sum = FrameWidth / w * h;
+        document.getElementById("landing-page-right").style.flexDirection = "column";
 
-        height = height_sum;
-        width = width_sum / 2;
-        rotate = false;
+        //1-fit width
+        height_try = FrameWidth / w * h;
+
+        if ( height_try * 2 < FrameHeight){
+
+            height = height_try;
+            height_back = height_try;
+
+            width = width_sum / 2; // title + chart
+            width_back = width_sum;
+
+            rotate = false;
+        }
+        else{
+            //2-fit (height, double)
+            width_try = (FrameHeight / 2) / h * w;
+
+            height = height_sum / 2;
+            height_back = height_sum / 2;
+
+            width = width_try /2;
+            width_back = width_try;
+
+            rotate = false;
+        }
+
     }
     else { 
         //vertical
-        document.getElementById("front").style.flexDirection = "column" 
-        width_sum = (FrameHeight / h * w) 
+        document.getElementById("front").style.flexDirection = "column";
+        document.getElementById("landing-page-right").style.flexDirection = "row";
 
-        height = height_sum / 2;
-        width = width_sum;
-        rotate = false;
+        //1-fit height
+        width_try = (FrameHeight / h * w) 
 
-        if (w/h < 0.3) { rotate = true;}
+        if (width_try * 2 < FrameWidth){
+
+            height = height_sum / 2;
+            height_back = height_sum;
+
+            width = width_try;
+            width_back = width_try;
+
+            rotate = true;
+
+        } else {
+
+            //2-fit width
+            height_try = (FrameWidth / 2) / w * h;
+
+            height = height_try / 2;
+            height_back = height_try;
+
+            width = FrameWidth / 2;
+            width_back = FrameWidth / 2;
+
+            rotate = true;
+        }
+
+ 
+
+        // if (w/h < 0.3) { rotate = true;}
 
     } 
 
-    document.getElementById("front").style.width = width_sum * 1.01 +"px";
-    document.getElementById("front").style.height = height_sum * 1.01 +"px";
+    document.getElementById("front").style.width = width_back * 1.01 +"px";
+    document.getElementById("front").style.height = height_back * 1.01 +"px";
+
+    document.getElementById("back").style.width = width_back * 1.01 +"px";
+    document.getElementById("back").style.height = height_back * 1.01 +"px";
 }
 
 document.getElementById('resetBtn').addEventListener("click", function(){

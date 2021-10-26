@@ -34,6 +34,16 @@ body{
     border: 1px solid black;
     display: flex;
     /* flex-direction: column; */
+
+    margin: 20px;
+}
+
+#back{
+    border: 1px solid black;
+    display: flex;
+    margin: 20px;
+    
+    /* flex-direction: column; */
 }
 
 #landing-page{
