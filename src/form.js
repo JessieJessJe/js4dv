@@ -14,18 +14,18 @@ var data, data_text, recipient="People";
 function initial(){
 
     data = [{"h":100, "t":"2021", "text":"", "color":"none", "stage":0}, 
-            {"h":100, "t":"", "text":"", "color":"none", "stage":0}, 
-            {"h":100, "t":"", "text":"", "color":"none", "stage":0}, 
-            {"h":100, "t":"", "text":"","color":"none", "stage":0}, 
+            {"h":100, "t":"Jan.", "text":"", "color":"none", "stage":0}, 
+            {"h":100, "t":"Feb.", "text":"", "color":"none", "stage":0}, 
+            {"h":100, "t":"Mar.", "text":"","color":"none", "stage":0}, 
             {"h":100, "t":"Apr.", "text":"process1", "color":"#8CC6D4", "stage":1}, 
-            {"h":100, "t":"", "text":"process1", "color":"#8CC6D4", "stage":1},
-            {"h":100, "t":"", "text":"process1", "color":"#8CC6D4", "stage":1},
-            {"h":100, "t":"", "text":"process1", "color":"#8CC6D4", "stage":1},
-            {"h":100, "t":"", "text":"process1", "color":"#8CC6D4", "stage":1},
+            {"h":100, "t":"May", "text":"process1", "color":"#8CC6D4", "stage":1},
+            {"h":100, "t":"Jun.", "text":"process1", "color":"#8CC6D4", "stage":1},
+            {"h":100, "t":"Jul.", "text":"process1", "color":"#8CC6D4", "stage":1},
+            {"h":100, "t":"Aug.", "text":"process1", "color":"#8CC6D4", "stage":1},
             {"h":100, "t":"Set.", "text":"process1", "color":"#8CC6D4", "stage":1},
-            {"h":100, "t":"", "text":"process2", "color":"#BAABC8", "stage":2},
-            {"h":100, "t":"", "text":"process2", "color":"#BAABC8", "stage":2},
-            {"h":100, "t":"", "text":"", "color":"none", "stage":0}, 
+            {"h":100, "t":"Oct.", "text":"process2", "color":"#BAABC8", "stage":2},
+            {"h":100, "t":"Nov.", "text":"process2", "color":"#BAABC8", "stage":2},
+            {"h":100, "t":"Dec.", "text":"", "color":"none", "stage":0}, 
             {"h":100, "t":"2022", "text":"", "color":"none", "stage":0}];
 
     data_text = {
