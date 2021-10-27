@@ -93,7 +93,7 @@ function getRandomInt(max) {
 }
 
 function myRandom(){
-    return getRandomInt(2) + 2
+    return getRandomInt(4) + 2
 }
 
 function getPosition(rotate, i){
