@@ -89,7 +89,7 @@ const handler = (event) => {
     const valid = formElement.reportValidity();
     if (valid) {
         const result = getFormJSON(formElement);
-        console.log(result)
+      
     
 //-----------custom
 
@@ -111,10 +111,14 @@ const handler = (event) => {
     
 
    getVizData(time_process);
+
+//    console.log("card width", card_width)
+//    console.log("card height", card_height)
+
    getWH(card_width,card_height)
    drawFrontChart(data, width, height, rotate);
    drawFrontTitle(data_text, width, height);
-   drawBack(recipient, width, height, rotate)
+   drawBack(recipient, width_back, height_back, rotate)
 
 }
 }
@@ -169,8 +173,8 @@ function handleProcess(result){
 
     }
 
-    console.log(time_process);
-    console.log(naming_process);
+    // console.log(time_process);
+    // console.log(naming_process);
 }
 
 //not useful yet
@@ -223,8 +227,12 @@ let width_sum = FrameWidth;
 
 let height_try, width_try = 0;
 
+console.log(w, h, "my width / height", w/h)
+
     //determine layout
-    if (w/h > 1.5){
+    if ( (w/h) > 1.5){
+
+        console.log("w/h > 1,5", w/h)
         
         // title&chart horizontally stacked
         document.getElementById("front").style.flexDirection = "row";
@@ -267,8 +275,10 @@ let height_try, width_try = 0;
 
         if (width_try * 2 < FrameWidth){
 
-            height = height_sum / 2;
-            height_back = height_sum;
+            console.log("fit height?")
+
+            height = FrameHeight / 2;
+            height_back = FrameHeight;
 
             width = width_try;
             width_back = width_try;
@@ -278,6 +288,12 @@ let height_try, width_try = 0;
         } else {
 
             //2-fit width
+            //FrameWidth / 2 will be the new width
+
+            console.log("height_Try", height_try)
+            console.log("height", height)
+            console.log("height_Back", height_back)
+
             height_try = (FrameWidth / 2) / w * h;
 
             height = height_try / 2;

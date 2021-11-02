@@ -61,7 +61,7 @@ title.append("text")
     .text(data_text.farm)   
     .attr("x", margin.left)
     // .attr("y", height - measure_text.height * scale - margin.top - margin.bottom)
-    .attr("y", margin.top * 2 + measure_text.height * scale * 2)
+    .attr("y", margin.top * 1.3 + measure_text.height * scale * 2)
     .style("font-size", scale + "px");
 
 }

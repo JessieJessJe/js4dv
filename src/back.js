@@ -4,15 +4,13 @@ var fontSize = 20;
 var repeatContent, total;
 var message = `Farm to ${receipient}`;
 
-// var ratio = width / 500;
-// var margin =  {"top": 100*ratio, "right": 100*ratio, "bottom": 100*ratio, "left": 100*ratio };
 
 //vertically
-if (!rotate){
+// if (!rotate){
     total = Math.floor( height / fontSize);  
-} else {
-    total = Math.floor( width / message.length * fontSize);
-}
+// } else {
+//     total = Math.floor( width / message.length * fontSize);
+// }
 
 repeatContent = new Array(total).fill(message);
 
@@ -47,7 +45,7 @@ var back = d3.select("svg#back-content")
 // .attr("y", 0)
 // .style("font-size", "1rem");
 
-if (!rotate){
+// if (!rotate){
 
     back.enter()
         .append("text")
@@ -64,23 +62,23 @@ if (!rotate){
         .style("font-size", "1rem");
 
 
-} else{
-    back.enter()
-    .append("text")
-    .merge(back)
-    .text(function(d){ return d})
-    .attr("class","text-back") 
-    .attr("transform", function(d,i){
-        return  `translate( ${i*fontSize*message.length} ${height/myRandom()})`
-    })
-    // .attr("transform", `translate(` + function(d,i){ return i*fontSize*message.length} + `${height/myRandom()})`)
-    .attr("x", 0)
-    // .attr("y", height - measure_text.height * scale - margin.top - margin.bottom)
-    .attr("y", 0)
-    .style("fill", "black")
-    .style("font-size", "1rem");
+// } else{
+//     back.enter()
+//     .append("text")
+//     .merge(back)
+//     .text(function(d){ return d})
+//     .attr("class","text-back") 
+//     .attr("transform", function(d,i){
+//         return  `translate( ${i*fontSize*message.length} ${height/myRandom()})`
+//     })
+//     // .attr("transform", `translate(` + function(d,i){ return i*fontSize*message.length} + `${height/myRandom()})`)
+//     .attr("x", 0)
+//     // .attr("y", height - measure_text.height * scale - margin.top - margin.bottom)
+//     .attr("y", 0)
+//     .style("fill", "black")
+//     .style("font-size", "1rem");
     
-}
+// }
 
 // back.exit().remove();
 
