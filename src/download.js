@@ -15,9 +15,7 @@ document.getElementById('downloadBtn').addEventListener('click', function (){
     function imageDownload(node, name){
 
         domtoimage.toPng(node).then(function (dataUrl) {
-            // var img = new Image();
-            //document.body.appendChild(img);
-            
+
     
             // var img = '<img src="'+imgsrc+'">'; 
             // d3.select("#front-canvas").html(img);
@@ -32,14 +30,15 @@ document.getElementById('downloadBtn').addEventListener('click', function (){
     
             image.onload = function() {
     
-                // var imageH = image.naturalHeight;
-                // var imageW = image.naturalWidth;
+                var imageH = image.naturalHeight;
+                var imageW = image.naturalWidth;
     
-                canvas.height = H;
-                canvas.width = W;
+                canvas.height = imageH + MT + MB;
+                canvas.width = imageW + ML + MR;
     
                 // context.drawImage(image, 0, 0, imageW, imageH);
-                context.drawImage(image, ML, MT, ML+W, MT+H, 0, 0, W, H);
+                // context.drawImage(image, 0,0, imageW, imageH, 0, 0, W, H);
+                context.drawImage(image, 0,0)
     
                 var canvasdata = canvas.toDataURL("image/png");
     
