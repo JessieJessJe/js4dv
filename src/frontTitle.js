@@ -1,7 +1,7 @@
 function drawFrontTitle(data_text, width, height) {
   width = width / 2;
   let benchmark_text;
-  if (data_text['name'].length > data_text['farm'].length) {
+  if (data_text['name'].length > data_text['farm']?.length) {
     benchmark_text = data_text.name;
   } else {
     benchmark_text = data_text.farm;

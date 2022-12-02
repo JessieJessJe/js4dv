@@ -73,15 +73,17 @@ const handler = (event) => {
 
     handleProcess(result);
 
-    data_text = {
-      name: result['product-name'],
-      farm: result['farmName'],
-    };
-
     getVizData(time_process);
+    console.log('time process', time_process);
 
     setCardSize();
     drawFrontChart(data, width, height, rotate);
+
+    data_text = {
+      name: result['product-name'],
+      // farm: result['farmName'],
+    };
+
     drawFrontTitle(data_text, width, height);
   }
 };
@@ -97,16 +99,6 @@ function handleProcess(result) {
       if (Array.isArray(result[process])) {
         let list = result[process];
 
-        if (list[list.length - 1] == '') {
-          //other isn't empty - get the customized name
-          setProcessName(true, i);
-          //drop the 'other value'
-          list.pop();
-        } else {
-          //use default name
-          setProcessName(false, i);
-        }
-
         //counting the months checked
         for (l in list) {
           let month = parseInt(list[l].slice(6));
@@ -116,7 +108,6 @@ function handleProcess(result) {
 
       //not an array, meaning in this process only one month being selected
       else if (result[process] != '') {
-        setProcessName(false, i);
         let month = parseInt(result[process].slice(6));
         time_process[month] = i;
       }
@@ -125,16 +116,16 @@ function handleProcess(result) {
 }
 
 //not useful yet
-function setProcessName(customize = false, i) {
-  if (customize == false) {
-    naming_process[i] = PNAME[i - 1];
-  } else {
-    //get the customized name
-    // let c = document.getElementById(`process${i}-other-value`).children[0].text;
-    console.log(document.getElementById(`process${i}-other-value`).innerHTML);
-    // naming_process[i] = c;
-  }
-}
+// function setProcessName(customize = false, i) {
+//   if (customize == false) {
+//     naming_process[i] = PNAME[i - 1];
+//   } else {
+//     //get the customized name
+//     // let c = document.getElementById(`process${i}-other-value`).children[0].text;
+//     console.log(document.getElementById(`process${i}-other-value`).innerHTML);
+//     // naming_process[i] = c;
+//   }
+// }
 
 function getVizData(time_process, h = 100) {
   let viz_text = [];
